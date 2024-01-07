@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var addButton=document.getElementsByClassName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -18,7 +18,7 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
-
+    listItem.classList.add('tasks-item');
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
     //label
@@ -37,14 +37,19 @@ var createNewTaskElement=function(taskString){
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.classList.add('input');
     editInput.type="text";
-    editInput.className="task";
+    editInput.classList.add('input');
+    editInput.classList.add('task');
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.classList.add('button');
+    editButton.classList.add('edit');
 
-    deleteButton.className="delete";
+    deleteButton.classList.add('button');
+    deleteButton.classList.add('delete');
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.classList.add('image');
     deleteButton.appendChild(deleteButtonImg);
 
 
